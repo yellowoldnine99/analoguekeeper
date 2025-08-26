@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analogue Keeper 学习版</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: Arial, sans-serif; background:#f5f5f5; }
+
+  /* 顶部固定区域容器 */
+  .header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* 确保覆盖其他内容 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  /* 顶部 Tips 区域 */
+  .top-tips {
+    background-color: #f2f2f2; /* 浅灰色 */
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* 顶部 Logo 区域 */
+  .top-gray {
+    background-color: #eeeeee; /* 很浅的灰色 */
+    padding: 50px 20px;         /* 高度加倍 */
+    text-align: center;
+  }
+  .top-gray img {
+    max-height: 40px;           /* Logo 高度可调整 */
+    object-fit: contain;
+  }
+
+  /* 顶部分类栏 */
+  .category-bar {
+    background: #eeeeee;        /* 保留修改过的浅灰色 */
+    padding: 10px 20px;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* 横向滚动 */
+    border-bottom: 1px solid #ccc;
+  }
+  .category-bar a {
+    text-decoration: none;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .category-bar a.active {
+    background-color: #444444;  /* 保留你修改的深灰色 */
+    color: #fff;
+  }
+
+  /* 商品网格 */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    margin-top: 220px; /* 留出顶部固定区域高度 */
+  }
+  .product-card {
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  .product-card h3 {
+    font-size: 14px;
+    margin: 10px 0 5px;
+    color: #333;
+  }
+  .product-card p {
+    color: #ff5000;             /* 保留价格颜色 */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  /* 隐藏滚动条（可选） */
+  .category-bar::-webkit-scrollbar { display: none; }
+
+</style>
+</head>
+<body>
+
+<!-- 顶部固定区域 -->
+<div class="header-container">
+  <!-- 顶部 Tips 区域 -->
+  <div class="top-tips">
+    本网站仅供爱好者参考查询使用，不得用于商业用途。
+  </div>
+
+  <!-- 顶部 Logo 区域 -->
+  <div class="top-gray">
+    <img src="img/logo.png" alt="Logo">
+  </div>
+
+  <!-- 顶部分类 -->
+  <div class="category-bar">
+  <a href="#" class="active">全部</a>
+  <a href="#">本子</a>
+  <a href="#">胶带</a>
+  <a href="#">便签</a>
+  <a href="#">小物</a>
+</div>
+
+<!-- 商品网格 -->
+<div class="product-grid">
+  <div class="product-card">
+    <img src="https://via.placeholder.com/200x180" alt="商品1">
+    <h3>商品名称1</h3>
+    <p>￥99</p>
+  </div>
+  <div class="product-card">
+    <img src="https://via.placeholder.com/200x180" alt="商品2">
+    <h3>商品名称2</h3>
+    <p>￥199</p>
+  </div>
+  <div class="product-card">
+    <img src="https://via.placeholder.com/200x180" alt="商品3">
+    <h3>商品名称3</h3>
+    <p>￥299</p>
+  </div>
+  <!-- 可以继续添加更多商品 -->
+</div>
+
+</body>
+</html>
