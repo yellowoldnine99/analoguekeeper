@@ -5,22 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Analogue Keeper 学习版</title>
 <style>
+  /* 全局样式 */
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: Arial, sans-serif; background:#f5f5f5; }
+  body { font-family: Arial, sans-serif; background:#eeeeee; }
 
-  /* 顶部固定区域容器 */
+  /* 顶部固定区域 */
   .header-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999; /* 确保覆盖其他内容 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 999;
   }
 
-  /* 顶部 Tips 区域 */
+  /* 顶部提示 */
   .top-tips {
-    background-color: #f2f2f2; /* 浅灰色 */
+    background-color: #f2f2f2;
     padding: 8px 20px;
     text-align: center;
     font-size: 13px;
@@ -28,24 +28,24 @@
     border-bottom: 1px solid #ccc;
   }
 
-  /* 顶部 Logo 区域 */
+  /* Logo */
   .top-gray {
-    background-color: #eeeeee; /* 很浅的灰色 */
-    padding: 50px 20px;         /* 高度加倍 */
+    background-color: #eeeeee;
+    padding: 50px 20px;
     text-align: center;
   }
   .top-gray img {
-    max-height: 40px;           /* Logo 高度可调整 */
+    max-height: 40px;
     object-fit: contain;
   }
 
-  /* 顶部分类栏 */
+  /* 分类栏 */
   .category-bar {
-    background: #eeeeee;        /* 保留修改过的浅灰色 */
+    background: #eeeeee;
     padding: 10px 20px;
     display: flex;
     gap: 20px;
-    overflow-x: auto; /* 横向滚动 */
+    overflow-x: auto;
     border-bottom: 1px solid #ccc;
   }
   .category-bar a {
@@ -54,94 +54,153 @@
     padding: 6px 12px;
     border-radius: 4px;
     white-space: nowrap;
+    cursor: pointer;
   }
   .category-bar a.active {
-    background-color: #444444;  /* 保留你修改的深灰色 */
+    background-color: #444444;
     color: #fff;
   }
 
   /* 商品网格 */
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
     padding: 20px;
-    margin-top: 220px; /* 留出顶部固定区域高度 */
+    margin-top: 280px;
+    background-color: #fff; /* 商品区域白色 */
   }
+
+  /* 商品卡片 */
   .product-card {
     background: #fff;
-    border-radius: 6px;
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: none;
     text-align: center;
-    transition: transform 0.2s;
+    padding: 0;
   }
-  .product-card:hover {
-    transform: translateY(-5px);
-  }
+
+  /* 商品图片 */
   .product-card img {
     width: 100%;
-    height: 180px;
+    aspect-ratio: 1 / 1;  /* 保持正方形 */
     object-fit: cover;
+
+    /* 禁止拖拽 */
+    user-drag: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    -ms-user-drag: none;
   }
+
+  /* 商品名称 */
   .product-card h3 {
     font-size: 14px;
     margin: 10px 0 5px;
     color: #333;
   }
+
+  /* 商品价格 */
   .product-card p {
-    color: #ff5000;             /* 保留价格颜色 */
+    color: #ff5000;
     font-weight: bold;
     margin-bottom: 10px;
   }
 
-  /* 隐藏滚动条（可选） */
+  /* 隐藏分类滚动条 */
   .category-bar::-webkit-scrollbar { display: none; }
-
 </style>
 </head>
-<body>
+
+<!-- 禁止右键菜单 -->
+<body oncontextmenu="return false;">
 
 <!-- 顶部固定区域 -->
 <div class="header-container">
-  <!-- 顶部 Tips 区域 -->
   <div class="top-tips">
     本网站仅供爱好者参考查询使用，不得用于商业用途。
   </div>
 
-  <!-- 顶部 Logo 区域 -->
   <div class="top-gray">
     <img src="img/logo.png" alt="Logo">
   </div>
 
-  <!-- 顶部分类 -->
   <div class="category-bar">
-  <a href="#" class="active">全部</a>
-  <a href="#">本子</a>
-  <a href="#">胶带</a>
-  <a href="#">便签</a>
-  <a href="#">小物</a>
+    <a href="#" class="active" data-category="all">全部</a>
+    <a href="#" data-category="notebook">本子</a>
+    <a href="#" data-category="washi">胶带</a>
+    <a href="#" data-category="memo">便签</a>
+    <a href="#" data-category="small">小物</a>
+  </div>
 </div>
 
 <!-- 商品网格 -->
-<div class="product-grid">
-  <div class="product-card">
-    <img src="https://via.placeholder.com/200x180" alt="商品1">
-    <h3>商品名称1</h3>
-    <p>￥99</p>
-  </div>
-  <div class="product-card">
-    <img src="https://via.placeholder.com/200x180" alt="商品2">
-    <h3>商品名称2</h3>
-    <p>￥199</p>
-  </div>
-  <div class="product-card">
-    <img src="https://via.placeholder.com/200x180" alt="商品3">
-    <h3>商品名称3</h3>
-    <p>￥299</p>
-  </div>
-  <!-- 可以继续添加更多商品 -->
+<div class="product-grid" id="product-grid">
+  <!-- JS 自动生成卡片 -->
 </div>
+
+<script>
+  // 阻止拖拽图片
+  document.addEventListener('dragstart', e => {
+    if(e.target.tagName === 'IMG') e.preventDefault();
+  });
+
+  const grid = document.getElementById('product-grid');
+  let allProducts = [];
+
+  // 加载商品 JSON
+  fetch('products.json') // JSON 文件同目录
+    .then(res => res.json())
+    .then(products => {
+      allProducts = products;
+      renderProducts(allProducts);
+    })
+    .catch(err => console.error('加载商品失败', err));
+
+  // 渲染商品卡片函数
+  function renderProducts(products) {
+    grid.innerHTML = ''; // 清空
+    products.forEach(p => {
+      // 创建跳转链接包裹卡片
+      const link = document.createElement('a');
+      link.href = `product_pages/product-${p.id}.html`;
+      link.style.textDecoration = 'none';
+      link.style.color = 'inherit';
+
+      // 创建卡片
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>￥${p.original_price}</p>
+      `;
+
+      link.appendChild(card);
+      grid.appendChild(link);
+    });
+  }
+
+  // 分类筛选
+  const categoryLinks = document.querySelectorAll('.category-bar a');
+  categoryLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      categoryLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      const category = link.dataset.category;
+      if(category === 'all') {
+        renderProducts(allProducts);
+      } else {
+        const filtered = allProducts.filter(p => p.category === category);
+        renderProducts(filtered);
+      }
+    });
+  });
+</script>
 
 </body>
 </html>

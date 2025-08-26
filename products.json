@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "ana便签1",
+    "original_price": 99,
+    "img": "img/IMG_2942.jpg",
+    "category": "便签",
+    "tags": "官网线上",
+    "date": "2025-08-25",
+    "size": "10cm x 5cm",
+    "background": "这是商品1的背景信息。",
+    "extra_imgs": "https://via.placeholder.com/400x200  "
+  },
+  {
+    "id": 2,
+    "name": "ana便签2",
+    "original_price": 100,
+    "img": "img/IMG_2943.jpg",
+    "category": "便签",
+    "tags": "官网线上",
+    "date": "2025-08-25",
+    "size": "10cm x 5cm",
+    "background": "这是商品2的背景信息。",
+    "extra_imgs": "https://via.placeholder.com/400x200  "
+  },
+  {
+    "id": 3,
+    "name": "ana便签3",
+    "original_price": 101,
+    "img": "img/IMG_2944.jpg",
+    "category": "便签",
+    "tags": "官网线上",
+    "date": "2025-08-25",
+    "size": "10cm x 5cm",
+    "background": "这是商品3的背景信息。",
+    "extra_imgs": "https://via.placeholder.com/400x200  "
+  },
+  {
+    "id": 4,
+    "name": "ana便签4",
+    "original_price": 102,
+    "img": "img/IMG_2945.jpg",
+    "category": "便签",
+    "tags": "官网线上",
+    "date": "2025-08-25",
+    "size": "10cm x 5cm",
+    "background": "这是商品4的背景信息。",
+    "extra_imgs": "https://via.placeholder.com/400x200  "
+  },
+  {
+    "id": 5,
+    "name": "ana便签5",
+    "original_price": 103,
+    "img": "img/IMG_2946.jpg",
+    "category": "便签",
+    "tags": "官网线上",
+    "date": "2025-08-25",
+    "size": "10cm x 5cm",
+    "background": "这是商品5的背景信息。",
+    "extra_imgs": "https://via.placeholder.com/400x200  "
+  },
+  {
+    "id": 6,
+    "name": "ana便签6",
+    "original_price": 104,
+    "img": "img/IMG_2947.jpg",
+    "category": "便签",
+    "tags": "官网线上",
+    "date": "2025-08-25",
+    "size": "10cm x 5cm",
+    "background": "这是商品6的背景信息。",
+    "extra_imgs": "https://via.placeholder.com/400x200  "
+  }
+]

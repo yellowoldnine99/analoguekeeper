@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ana便签1 - Analogue Keeper</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#fff; margin:0; padding:0; }
+
+  /* 顶部返回按钮 */
+  .back-btn {
+      display:inline-block;
+      margin:20px;
+      text-decoration:none;
+      color:#333;
+      font-weight:bold;
+  }
+
+  /* 上半部分容器，图片+信息 */
+  .product-detail {
+      display:flex;
+      gap:40px;
+      padding:20px;
+      flex-wrap: wrap;
+      background-color:#fff;
+
+      max-width:900px;       /* 最大宽度 */
+      margin:0 auto;         /* 水平居中整个容器 */
+      align-items:center;     /* 图片和文字垂直居中 */
+      justify-content:center; /* 图片+文字水平居中 */
+  }
+
+  /* 左侧主图 */
+  .main-img {
+      width:350px;           /* 可调整主图大小 */
+      height:350px;
+      object-fit:cover;
+      flex-shrink:0;
+      user-drag:none;
+      -webkit-user-drag:none;
+      -moz-user-drag:none;
+      -o-user-drag:none;
+      -ms-user-drag:none;
+  }
+
+  /* 右侧信息 */
+  .product-info {
+      flex:1;
+      max-width:400px;       /* 右侧信息最大宽度 */
+      display:flex;
+      flex-direction:column;
+      justify-content:center; /* 垂直居中信息 */
+  }
+
+  .product-info h2 { margin-bottom:10px; }
+  .product-info p { margin:5px 0; }
+
+  /* 下面详情图片容器 */
+  .detail-images {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      max-width:900px;
+      margin:20px auto;
+  }
+  .detail-images img {
+      width:200px;
+      height:200px;
+      object-fit:cover;
+  }
+</style>
+</head>
+<body>
+
+<a class="back-btn" href="../analogue.html">&larr; 返回主页</a>
+
+<div class="product-detail">
+    <!-- 左侧主图 -->
+    <img class="main-img" src="../img/IMG_2942.jpg" alt="ana便签1">
+
+    <!-- 右侧信息 -->
+    <div class="product-info">
+        <h2>ana便签1</h2>
+        <p><strong>原价：</strong>￥99</p>
+        <p><strong>发售渠道：</strong>官网线上</p>
+        <p><strong>发售日期：</strong></p>
+        <p><strong>尺寸：</strong>10cm x 5cm</p>
+        <p><strong>产品背景：</strong>这是商品1的背景信息。</p>
+    </div>
+</div>
+
+<!-- 下面的其他详情图 -->
+<div class="detail-images">
+
+</div>
+</body>
+</html>
